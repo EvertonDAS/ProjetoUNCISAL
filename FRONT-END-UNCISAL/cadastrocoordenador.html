@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/cadastrocoordenador.css">
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js" 
+    integridade = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo =" 
+    crossorigin = "anônimo" > </script>  
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/coordenador.js"></script>
+
+
+    <title>Cadastro</title>
+</head>
+<body onload="verificaToken()">
+    
+
+  <nav class="nav">
+    <ul class="menu">
+          <li><img src="img/uncii.png" class="img"  style="max-width:100%;height:auto;">
+          <li > <h4 class="h4"> <p>UNCISAL</p>
+          Sistema de Distribuição de Horário Docente
+          </h4>
+          <li><a href="home.html">HOME</a>
+              <li class="submenu"><a href="#">COORDENADOR</a>
+                  <ul>
+                      <li class=""><a href="cadastrocoordenador.html">Cadastro Coordenador</a></li>
+                      <li class=""><a href="editarCoordenador.html">Editar Coordenador</a></li>
+                     </ul>
+              <li class=""><a href="#">DOCENTES</a>
+                  <ul class="submenu2">
+                      <li class=""><a href="cadastrodocentes.html">Cadastro Docentes</a></li>
+                      <li class=""><a href="editarDocentes.html">Editar Docentes</a></li>
+                  </ul>
+              <li><a href="#">HORARIOS</a>
+              <li class=""><a href="#">DISCIPLINA</a>
+                  <ul class="submenu3">
+                      <li class=""><a href="cadastrodisciplinas.html">Cadastrar Disciplinas</a></li>
+                      <li class=""><a href="editarDisciplina.html">Editar Disciplinas</a></li>
+                  </ul>
+              <li id="sair"><a href="index.html">SAIR</a>
+              <li id="usuario"><a class="preto" href="#">ADM</a>
+    </ul>
+  </nav>
+
+    <div class="container" >
+        <a class="links" id="paracadastro"></a>
+        <div class="content">      
+          <!--FORMULÁRIO DE LOGIN-->
+          <div id="login">
+           
+    
+          <div id="cadastro">
+            <form method="post" action="" id="formulario"> 
+              <h4 class="cadastro">Cadastro Coordenador</h4> 
+              <br>
+              
+              <p> 
+                <label for="nome_cad"></label>
+                <input id="nome" name="nome" required="required" type="text" placeholder="Nome" />
+              </p>
+              
+              <p> 
+                <label for="email_cad"></label>
+                <input id="email" name="email" required="required" type="email" placeholder="E-mail"/> 
+              </p>
+              
+              <p> 
+                <label for="senha_cad"></label>
+                <input id="senha" name="senha" required="required" type="password" placeholder="Senha"/>
+              </p>
+              
+              <p> 
+                <label for="matricula_cad"></label>
+                <input id="matricula" name="matricula" required="required" type="text" placeholder="Matricula"/>
+              </p>
+
+            
+              <p> 
+                <input type="submit" id="cadastrar" value="Cadastrar"/> 
+              </p>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

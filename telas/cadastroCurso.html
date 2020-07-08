@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/cadastroCurso.css">
+
+  <title>Cadastro Curso</title>
+</head>
+
+<body onload="verificaToken();listarCoordenador()">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">
+          <img src="img/uncii.png" width="55" height="55" alt="">
+        </a>
+        <a class="navbar-brand" href="">
+          <p>UNCISAL</p>Sistema de Distribuição de Horário Docente
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="home.html">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">COORDENADOR <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="cadastrocoordenador.html">Cadatro Coordenador</a></li>
+              <li><a href="buscarCoordernador.html">Buscar Coordenador</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">DOCENTES <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="cadastrodocentes.html">Cadastro Docentes</a></li>
+              <li><a href="buscarDocentes.html">Buscar Docentes</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">HORARIOS <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="distribuiçãoAutomático.html">Distribuição Automático</a></li>
+              <li><a href="distribuiçãoManual.html">Distribuição Manual</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">DISCIPLINA <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="cadastrodisciplinas.html">Cadastrar Disciplinas</a></li>
+              <li><a href="buscarDisciplinas.html">Buscar Disciplinas</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">CURSO <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="cadastroCurso.html">Cadastrar Curso</a></li>
+              <li><a href="buscarCurso.html">Buscar Curso</a></li>
+            </ul>
+          </li>
+          <li id="sair"><a href="index.html">SAIR</a></li>
+          <li><a id="negrito" href="#">ADM</a></li>
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    <a class="links"></a>
+    <div class="content">
+      <div id="login">
+        <form method="post" action="">
+
+          <div id="cadastro">
+            <form method="post" action="">
+              <h4 class="cadastro">Cadastro Cursos</h4>
+              <br>
+
+              <p>
+                <label for="nome_cad"></label>
+                <input id="nome" name="nome" required="required" type="text" placeholder="curso" />
+              </p>
+
+              <p>
+              <div class="select">
+                <select name="id_coordenador" id="id_coordenador">
+                  <option selected disabled>Coordenador</option>
+                </select>
+              </div>
+              </p>
+
+              <p>
+                <input type="submit" onclick="cadastrar()" value="Cadastrar" />
+              </p>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/curso.js"></script>
+
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

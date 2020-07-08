@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/editarDisciplina.css">
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js" 
+    integridade = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo =" 
+    crossorigin = "anônimo" > </script>
+    <script type="text/javascript" src="js/main.js"></script>
+      
+    <title>Editar Disciplinas</title>
+</head>
+<body onload="verificaToken()">
+    
+
+  <nav class="nav">
+    <ul class="menu">
+          <li><img src="img/uncii.png" class="img"  style="max-width:100%;height:auto;">
+          <li > <h4 class="h4"> <p>UNCISAL</p>
+          Sistema de Distribuição de Horário Docente
+          </h4>
+          <li><a href="home.html">HOME</a>
+              <li class="submenu"><a href="#">COORDENADOR</a>
+                  <ul>
+                      <li><a href="cadastrocoordenador.html">Cadastro Coordenador</a></li>
+                      <li><a href="editarCoordenador.html">Editar Coordenador</a></li>
+                     </ul>
+              <li class=""><a href="#">DOCENTES</a>
+                  <ul class="submenu2">
+                      <li><a href="cadastrodocentes.html">Cadastro Docentes</a></li>
+                      <li><a href="editarDocentes.html">Editar Docentes</a></li>
+                  </ul>
+              <li><a href="#">HORARIOS</a>
+              <li class=""><a href="#">DISCIPLINA</a>
+                  <ul class="submenu3">
+                    <li><a href="cadastrodisciplinas.html">Cadastrar Disciplinas</a></li>
+                    <li><a href="editarDisciplina.html">Editar Disciplinas</a></li>
+                  </ul>
+              <li id="sair"><a href="index.html">SAIR</a>
+              <li id="usuario"><a class="preto" href="#">ADM</a>
+    </ul>
+  </nav>
+
+    <div class="container" >
+        <a class="links" id="paracadastro"></a>
+        <div class="content">      
+          <div id="login">
+            <form method="post" action=""> 
+    
+          <div id="cadastro">
+            <form method="post" action=""> 
+              <h4 class="cadastro">Editar Disciplinas</h4> 
+              <br>
+              
+              <p> 
+                <label for="disciplina_cad"></label>
+                <input id="disciplina" name="disciplina" required="required" type="text" placeholder="  Disciplina" />
+              </p>
+            
+              <p> 
+                <div class="select">
+                  <select name="horas" id="horas">
+                  <option selected disabled>Carga Horária</option>
+                  <option value="40h">40h</option>
+                  <option value="80h">80h</option>
+                </select>
+                </div>
+              </p>
+
+              <p> 
+                <div class="select">
+                  <select name="cursos" id="cursos">
+                  <option selected disabled>Curso</option>
+                  <option value="Sistemas para Internet">Sistemas para Internet</option>
+                  <option value="Enfermagem">Enfermagem</option>
+                  <option value="Fisioterapia">Fisioterapia</option>
+                  <option value="Fonoaudiologia">Fonoaudiologia</option>
+                  <option value="Medicina">Medicina</option>
+                  <option value="Terapia Ocupacional">Terapia Ocupacional</option>
+                  <option value="Alimentos">Alimentos</option>
+                  <option value="ADS">ADS</option>
+                  <option value="Gestão Hospitalar">Gestão Hospitalar</option>
+                  <option value="Processos Gerenciais">Processos Gerenciais</option>
+                  <option value="Radiologia">Radiologia</option>
+                  <option value="Segurança no Trabalho">Segurança no Trabalho</option>
+                  <option value="Sistemas Biomedicos">Sistemas Biomedicos</option>
+                </select>
+                </div>
+              </p>
+
+              <p> 
+                <div class="select">
+                  <select name="Professor" id="Professor">
+                  <option selected disabled>Professor</option>
+                  <option value="Adriana de Medeiros Melo">Adriana de Medeiros Melo</option>
+                  <option value="Alberto Monteiro Peixoto">Alberto Monteiro Peixoto</option>
+                  <option value="Alberto Sandes de Lima">Alberto Sandes de Lima</option>
+                  <option value="Alessandro de Melo Omena">Alessandro de Melo Omena</option>
+                  <option value="Ana Elizabeth dos Santos Lins">Ana Elizabeth dos Santos Lins</option>
+                  <option value="Andreia Cristiane Teixeira Juelle">Andreia Cristiane Teixeira Juelle</option>
+                  <option value="Augusto César Alves de Oliveira">Augusto César Alves de Oliveira</option>
+                  <option value="Cícera Maria Alencar do Nascimento">Cícera Maria Alencar do Nascimento</option>
+                  <option value="Denise Cristina de Lima">Denise Cristina de Lima</option>
+                  <option value="Éder da Silva Rocha Santos">Éder da Silva Rocha Santos</option>
+                  <option value="Diego da Silva Novais">Diego da Silva Novais</option>
+                  <option value="Paulo Henrique Gomes Silva">Paulo Henrique Gomes Silva</option>
+                </select>
+                </div>
+              </p>
+
+              <p> 
+                <input type="submit" value="Atualizar"/> 
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+ </form>
+</body>
+</html>

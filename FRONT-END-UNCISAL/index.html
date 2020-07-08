@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport"  charset="utf-8" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js" 
+    integridade = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo =" 
+    crossorigin = "anônimo" > </script>  
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/coordenador.js"></script>
+   
+</head>
+<body onload="verificaLogoff()">
+    <form class="box" action="" method="POST">
+    <img src="img/uncii.png" style="max-width:100%;height:auto;">
+    <h4>SDHD - Sistema de Distribuição de Horário Docente</h4>
+    <i class="fas fa-user"></i>
+    <input type="text" id="email" name="email"  type="text"placeholder="E-mail:">
+    <i class="fas fa-lock"></i>
+    <input type="password" id="senha" name="senha"  type="password" placeholder="Senha:">
+    <br>
+    <div class=" salvar">
+    <span class="salvar"><input type="checkbox" name="1" value="1"> Deseja salvar as informações ?
+    </span>
+    </div>
+    <br>
+    <input type="submit" id="entrar" name="entrar"  value="Entrar">
+    <br>
+    <br>
+     <a href="esqueciSenha.html">Esqueceu sua senha ?</a>
+ </form>
+</body>
+</html>

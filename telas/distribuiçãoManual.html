@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/distribuiçãoManual.css">
+
+  <title>Distribuição Manual</title>
+</head>
+<body onload="verificaToken(); listarCursos()">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">
+                <img src="img/uncii.png" width="55" height="55" alt="">
+              </a>
+            <a class="navbar-brand" href=""><p>UNCISAL</p>Sistema de Distribuição de Horário Docente</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COORDENADOR <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cadastrocoordenador.html">Cadatro Coordenador</a></li>
+                        <li><a href="buscarCoordernador.html">Buscar Coordenador</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DOCENTES <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cadastrodocentes.html">Cadastro Docentes</a></li>
+                        <li><a href="buscarDocentes.html">Buscar Docentes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HORARIOS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="distribuiçãoAutomático.html">Distribuição Automático</a></li>
+                        <li><a href="distribuiçãoManual.html">Distribuição Manual</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DISCIPLINA <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cadastrodisciplinas.html">Cadastrar Disciplinas</a></li>
+                        <li><a href="buscarDisciplinas.html">Buscar Disciplinas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSO <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="cadastroCurso.html">Cadastrar Curso</a></li>
+                      <li><a href="buscarCurso.html">Buscar Curso</a></li>
+                  </ul>
+              </li>
+                <li id="sair"><a href="index.html">SAIR</a></li>
+                <li><a id="negrito" href="#">ADM</a></li>
+                
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+<div id="cadastro" >
+  <a class="links" id="paracadastro"></a>
+  <div class="content">      
+    <!--FORMULÁRIO DE LOGIN-->
+       <form method="post" action="">  <br>
+              <h4 class="aa">Distribuição de Horário Manual</h4> 
+              <br>
+        
+              <p> 
+                <div class="select">
+                  <select name="Curso" id="cursos">
+                  <option selected disabled>Selecione Curso</option>
+             
+                </select>
+                </div>
+              </p>
+
+              <p class="select1"> 
+                <select name="ano" id="ano">
+                    <option selected disabled>Selecione ano</option>
+                    <option value="2020">2020</option>
+                    <option value="2020.1">2020.1</option>
+                    <option value="2021">2021</option>
+                    <option value="2021.1">2021.1</option>
+                  </select>
+              </p>
+              
+              <p class="select2"> 
+                <select name="periodo" id="periodo">
+                    <option selected disabled>Selecione periodo</option>
+                    <option value="1° Período">1° Período</option>
+                    <option value="2° Período">2° Período</option>
+                    <option value="3° Período">3° Período</option>
+                    <option value="4° Período">4° periodo</option>
+                    <option value="5° periodo">5° Período</option>
+                    <option value="6° Período">6° Período</option>
+                    <option value="7° Período">7° Período</option>
+                    <option value="8° Período">8° Período</option>
+                    <option value="9° Período">9° Período</option>
+                  </select>
+              </p>
+
+              <p> 
+                <input type="submit" value="Buscar Distribuição"/> 
+              </p>
+            
+            <hr>
+            <table>
+              <tr>
+                <th class="n">HORARIO</th>
+                <th class="n">SEGUNDA</th>
+                <th class="m">TERÇA</th>
+                <th class="c">QUARTA</th>
+                <th class="e">QUINTA</th>
+                <th class="s">SEXTA</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <input id="botao" type="submit" value="Cadastrar"/> 
+            <input id="botao" type="submit" value="Imprimir"/>
+        </form>
+      </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>  
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/distManual.js"></script>
+
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

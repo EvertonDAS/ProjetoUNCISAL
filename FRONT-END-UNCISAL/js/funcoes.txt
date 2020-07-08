@@ -1,0 +1,167 @@
+https://obfuscator.io/
+
+//verifica se não está logado
+function verificaLogoff(){
+if (localStorage.getItem("token")){
+ alert("Acesso negado, faça logoff antes");
+ window.location.replace("home.html");
+}
+}
+
+//function verificaToken(){
+  //if (localStorage.getItem("token")){
+   // console.log("Acesso permitido")
+    //}else{
+    //alert("Voce precisa está logado");
+    //window.location.replace("index.html");
+ // }
+//}
+
+
+//remove o localStorage
+$(document).ready(function () {
+  $("#sair").click(function () {
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
+    alert("Saindo do sistema...!")
+  })
+  })
+
+   //mostrar usuario logado:
+  $(document).ready(function(){
+   if(localStorage.getItem("usuario")){ 
+   document.getElementById("usuario").innerText = "Usuário: "+localStorage.getItem("usuario");
+   }
+  })
+
+
+    //Fazer Login
+  $(document).ready(function () {
+    $("#entrar").click(function () {
+      var email = $("#email").val();
+      var senha =   $("#senha").val();
+      var login = "http://localhost:3000/coordenador/login";
+      $.ajax({
+        type: "POST",
+        url: login,
+        dataType: "json",
+        data: { "email": email,"senha": senha},
+        success: function (data) {
+          console.log(data);
+          //$("#token").val(data.token)
+          alert("Acesso Permitido");
+          $('.alert').fadeIn('2000');
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("usuario", data.nome);
+          window.location.replace("home.html");
+        },
+        error: function (erro) {
+          console.log(erro)
+          alert("Erro ao tentar acessar")
+          window.location.replace("index.html");
+        }
+      })
+    })
+  })
+
+
+//Cadastrar coordenador
+  $(document).ready(function () {
+    $("#cadastrar").click(function () {
+      var nome =   $("#nome").val();
+      var email =   $("#email").val();
+      var senha =   $("#senha").val();
+      var matricula = $("#matricula").val();
+      var curso =   $("#option").val();
+      
+      var cadastrar = "http://localhost:3000/coordenador/cadastrar";
+      $.ajax({
+        type: "POST",
+        url: cadastrar,
+        dataType: "json",
+        data: { 
+          "nome": nome, "email": email, "senha": senha, 
+          "matricula": matricula, "curso":curso},
+        success: function (data) {
+          alert("Coordenador criado com sucesso")
+          window.location.replace("home.html");
+        },
+        error: function (erro) {
+            alert("Erro ao realizar o cadastro ")
+        }
+      })
+    })
+  })
+
+
+
+  //localizar coordenador
+  $(document).ready(function(){
+    $("#localizar").click(function(){
+      var mat= $("#matricula").val();
+      var urlLocalizar = "http://localhost:3000/coordenador/localizar/"+ mat;
+      $.ajax({
+        url : urlLocalizar,
+        type : "GET",
+        dataType : "json",
+        success : function(data){
+         $("#nome").val(data.coordenador.nome);
+         $("#email").val(data.coordenador.email); 
+         $("#curso").val(data.coordenador.curso);
+         $("#nome").removeAttr("disabled")
+         $("#email").removeAttr("disabled")
+         $("#senha").removeAttr("disabled")
+         console.log(data) 
+        },
+        error: function (erro) {
+          alert("Matricula não encontrada")
+        }
+      })
+    })
+  })
+
+
+    //Atualizar coordenador
+  $(document).ready(function () {
+    $("#atualizar").click(function () {
+      var matricula = $("#matricula").val();
+      var nome =   $("#nome").val();
+      var email =   $("#email").val();
+      var curso =   $("#Curso").val();
+      var senha =   $("#senha").val();
+      var atualizar = "http://localhost:3000/coordenador/atualizar/"+matricula;             
+      $.ajax({
+        type: "post",
+        url: atualizar,
+        dataType: "json",
+        data: { 
+            "nome": nome,
+            "email": email,
+            "curso": curso,
+            "senha": senha},
+        success: function (data) {
+        console.log(data);
+        alert("Coordenador atualizado com sucesso")
+        $("#senha").val("");
+        },
+        error: function (erro) {
+          alert("Erro ao tentar atualizado")
+        console.log(erro)
+        }
+      })
+    })
+  })
+
+
+
+  {
+    "env" :{
+        "MYSQL_USER"     : "root",
+        "MYSQL_PASSWORD" : "root", 
+        "MYSQL_DATABASE" : "uncisal",
+        "MYSQL_HOST"     : "localhost",
+        "MYSQL_PORT"     : "3306",
+
+        "JWT_KEY" : "segredo"
+    }
+  }
